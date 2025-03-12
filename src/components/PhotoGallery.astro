@@ -17,9 +17,8 @@ const { photos = [] }: { photos?: Photo[] } = Astro.props;
           class='astro-photo'
           src={photo.src}
           format='webp'
-          width={1000}
-          height={1250}
-          sizes='(max-width: 768px) 100vw, 1000px'
+          widths={[500, 1000]}
+          sizes='(max-width: 500px) 500px, 1000px'
           alt={photo.alt}
           loading='lazy'
         />
