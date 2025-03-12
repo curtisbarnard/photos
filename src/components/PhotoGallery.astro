@@ -6,7 +6,16 @@ interface Photo {
   date: number;
 }
 
+function formatDate(number) {
+  const str = number.toString();
+  const formattedDate = `${str.slice(0, 4)}.${str.slice(4, 6)}.${str.slice(6, 8)}`;
+  return formattedDate;
+}
+
 const { photos = [] }: { photos?: Photo[] } = Astro.props;
+photos.forEach((photo) => {
+  photo.dateFormatted = formatDate(photo.date);
+});
 ---
 
 <div class='gallery'>
@@ -23,7 +32,9 @@ const { photos = [] }: { photos?: Photo[] } = Astro.props;
           loading='lazy'
         />
         <div class='photo-overlay'>
+          <div />
           <p>{photo.alt}</p>
+          <p>{photo.dateFormatted}</p>
         </div>
       </div>
     ))
@@ -43,7 +54,7 @@ const { photos = [] }: { photos?: Photo[] } = Astro.props;
         if (img) {
           const isFaded = img.classList.toggle('faded');
           if (overlay) {
-            (overlay as HTMLElement).style.display = isFaded ? 'flex' : 'none';
+            (overlay as HTMLElement).style.display = isFaded ? 'grid' : 'none';
           }
         }
       });
@@ -92,7 +103,13 @@ const { photos = [] }: { photos?: Photo[] } = Astro.props;
   }
 
   .photo-overlay p {
+    margin: 0;
     max-width: 65ch;
     padding: 1rem;
+  }
+
+  .photo-overlay :last-child {
+    align-self: end;
+    justify-self: end;
   }
 </style>
