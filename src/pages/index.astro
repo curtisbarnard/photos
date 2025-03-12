@@ -14,14 +14,38 @@ const photos = [
 ---
 
 <Layout />
+<header>
+	<h1><span>Photos</span> by Curtis</h1>
+</header>
 <main>
-	<h1>Photos by Curtis</h1>
 	<PhotoGallery photos={photos} />
 </main>
 
 <style>
+	header {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
 	main {
 		max-width: 1000px;
 		margin: 0 auto;
+	}
+
+	h1 {
+		font-weight: 400;
+		letter-spacing: -0.04em;
+		margin: 1rem 0;
+	}
+
+	h1 span {
+		font-weight: 700;
+		color: rgb(236, 71, 0);
+	}
+
+	@media (max-width: 1000px) {
+		h1 {
+			margin: 1rem;
+		}
 	}
 </style>

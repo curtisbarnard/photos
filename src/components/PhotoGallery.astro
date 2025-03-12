@@ -50,6 +50,11 @@ const { photos = [] }: { photos?: Photo[] } = Astro.props;
 </script>
 
 <style>
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
   .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -69,7 +74,7 @@ const { photos = [] }: { photos?: Photo[] } = Astro.props;
   }
 
   .faded {
-    opacity: 0.1;
+    opacity: 0.05;
   }
 
   .photo-overlay {
