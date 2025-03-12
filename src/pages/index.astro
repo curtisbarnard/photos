@@ -21,7 +21,7 @@ const photos = [
 
 <Layout />
 <header>
-	<h1><span>Photos</span> by Curtis</h1>
+	<h1>Photos<span> by Curtis</span></h1>
 </header>
 <main>
 	<PhotoGallery photos={photos} />
@@ -39,19 +39,22 @@ const photos = [
 	}
 
 	h1 {
-		font-weight: 400;
+		font-weight: 700;
+		font-size: 2rem;
+		color: rgb(236, 71, 0);
 		letter-spacing: -0.04em;
 		margin: 1rem 0;
 	}
 
 	h1 span {
-		font-weight: 700;
-		color: rgb(236, 71, 0);
+		font-weight: 400;
+		font-size: 1.2rem;
+		color: rgb(0, 0, 0);
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1005px) {
 		h1 {
-			margin: 1rem;
+			margin: 0.5rem;
 		}
 	}
 </style>
