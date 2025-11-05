@@ -10,6 +10,6 @@
   },
   "dependencies": {
     "@fontsource/atkinson-hyperlegible-mono": "^5.2.5",
-    "astro": "^5.4.3"
+    "astro": "^5.15.3"
   }
 }
